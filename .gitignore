@@ -1,5 +1,5 @@
 
 
 node_modules/
-
 .env
+database/logs.txt
