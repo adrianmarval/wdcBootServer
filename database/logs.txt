@@ -1,0 +1,146 @@
+
+[INFO] 30/04/2024 19:30:21 New Request: POST /api/phones/add from ::ffff:127.0.0.1
+[INFO] 30/04/2024 19:30:21 Se agregaron 0 numeros de telefono a la base de datos
+[INFO] 30/04/2024 19:38:13 New Request: POST /api/bots/add from ::ffff:127.0.0.1
+[INFO] 30/04/2024 19:41:31 New Request: POST /api/bots/add from ::ffff:127.0.0.1
+[INFO] 30/04/2024 19:43:24 New Request: POST /api/bots/add from ::ffff:127.0.0.1
+[INFO] 30/04/2024 19:44:51 New Request: POST /api/bots/add from ::ffff:127.0.0.1
+[INFO] 30/04/2024 19:47:26 New Request: POST /api/bots/add from ::ffff:127.0.0.1
+[ERROR] 30/04/2024 19:47:27 Error al crear el bot adrian: Error: No hay proxy disponible
+[INFO] 30/04/2024 19:52:16 New Request: POST /api/bots/add from ::ffff:127.0.0.1
+[ERROR] 30/04/2024 19:52:17 Error al crear el bot adrian: Error: No hay proxy disponible
+[INFO] 30/04/2024 19:57:44 New Request: POST /api/bots/add from ::ffff:127.0.0.1
+[INFO] 30/04/2024 19:59:27 New Request: POST /api/bots/add from ::ffff:127.0.0.1
+[INFO] 30/04/2024 20:00:41 New Request: POST /api/bots/add from ::ffff:127.0.0.1
+[INFO] 30/04/2024 20:01:21 New Request: POST /api/bots/add from ::ffff:127.0.0.1
+[INFO] 30/04/2024 20:02:15 New Request: POST /api/bots/add from ::ffff:127.0.0.1
+[INFO] 30/04/2024 20:03:02 New Request: POST /api/bots/add from ::ffff:127.0.0.1
+[INFO] 30/04/2024 20:03:18 New Request: POST /api/bots/add from ::ffff:127.0.0.1
+[INFO] 30/04/2024 20:06:27 New Request: POST /api/bots/add from ::ffff:127.0.0.1
+[ERROR] 30/04/2024 20:06:27 Error al crear el bot adrian: Error: No hay proxy disponible
+[INFO] 30/04/2024 20:07:13 New Request: POST /api/bots/add from ::ffff:127.0.0.1
+[ERROR] 30/04/2024 20:07:13 Se esperaba un String en la propiedad botName
+[INFO] 30/04/2024 21:47:56 New Request: POST /api/proxies/add from ::ffff:127.0.0.1
+[ERROR] 30/04/2024 21:47:56 El campo proxies debe ser un array
+[INFO] 30/04/2024 21:48:40 New Request: POST /api/proxies/add from ::ffff:127.0.0.1
+[ERROR] 30/04/2024 21:48:40 El campo proxies debe ser un array
+[INFO] 30/04/2024 21:50:29 New Request: POST /api/proxies/add from ::ffff:127.0.0.1
+[ERROR] 30/04/2024 21:50:29 El campo proxies debe ser un array
+[INFO] 30/04/2024 21:52:36 New Request: POST /api/proxies/add from ::ffff:127.0.0.1
+[ERROR] 30/04/2024 21:52:36 El campo country debe ser uno de: US, CA, UK, FR, DE, JP, AU
+[ERROR] 30/04/2024 21:52:36 El campo country debe ser uno de: US, CA, UK, FR, DE, JP, AU
+[INFO] 30/04/2024 21:55:08 New Request: POST /api/proxies/add from ::ffff:127.0.0.1
+[INFO] 30/04/2024 23:04:38 New Request: POST /api/proxies/add from ::ffff:127.0.0.1
+[ERROR] phone:ValidationError: connectionType: Path `connectionType` is required., country: Path `country` is required., proxyType: Path `proxyType` is required., port: Path `port` is required., host: Path `host` is required. 30/04/2024 23:06:04 Error al agregar proxies:
+[INFO] 30/04/2024 23:08:49 New Request: POST /api/proxies/add from ::ffff:127.0.0.1
+[INFO] 30/04/2024 23:10:15 New Request: POST /api/proxies/add from ::ffff:127.0.0.1
+[INFO] 30/04/2024 23:43:31 New Request: POST /api/proxies/add from ::ffff:127.0.0.1
+[ERROR] 30/04/2024 23:43:31 El campo country debe ser una cadena de texto
+[ERROR] 30/04/2024 23:43:31 El campo country debe ser una cadena de texto
+[ERROR] 30/04/2024 23:43:31 El campo country debe ser uno de: US, CA, UK, FR, DE, JP, AU
+[ERROR] 30/04/2024 23:43:31 El campo country debe ser uno de: US, CA, UK, FR, DE, JP, AU
+[INFO] 30/04/2024 23:44:25 New Request: POST /api/proxies/add from ::ffff:127.0.0.1
+[INFO] 30/04/2024 23:46:52 New Request: POST /api/proxies/add from ::ffff:127.0.0.1
+[INFO] 30/04/2024 23:47:43 Se agregaron 1 proxies a la base de datos
+[INFO] 30/04/2024 23:51:54 New Request: POST /api/proxies/add from ::ffff:127.0.0.1
+[INFO] 30/04/2024 23:51:56 Se agregaron 1 proxies a la base de datos
+[INFO] 30/04/2024 23:53:25 New Request: POST /api/proxies/add from ::ffff:127.0.0.1
+[INFO] 30/04/2024 23:53:27 Se agregaron 1 proxies a la base de datos
+[INFO] 30/04/2024 23:57:14 New Request: POST /api/proxies/add from ::ffff:127.0.0.1
+[INFO] 30/04/2024 23:57:16 Se agregaron 1 proxies a la base de datos
+[INFO] 01/05/2024 00:00:32 New Request: POST /api/proxies/add from ::ffff:127.0.0.1
+[ERROR] phone:BulkWriteError: E11000 duplicate key error collection: test.proxies index: host_1 dup key: { host: "x161.fxdx.in" } 01/05/2024 00:00:34 Error al agregar proxies:
+[INFO] 01/05/2024 00:00:55 New Request: POST /api/proxies/add from ::ffff:127.0.0.1
+[INFO] 01/05/2024 00:00:57 Se agregaron 1 proxies a la base de datos
+[INFO] 01/05/2024 00:03:06 New Request: POST /api/proxies/add from ::ffff:127.0.0.1
+[INFO] 01/05/2024 00:03:07 Se agregaron 0 proxies a la base de datos
+[INFO] 01/05/2024 00:04:31 New Request: POST /api/proxies/add from ::ffff:127.0.0.1
+[INFO] 01/05/2024 00:04:33 Se agregaron 1 proxies a la base de datos
+[INFO] 01/05/2024 00:06:22 New Request: POST /api/bots/add from ::ffff:127.0.0.1
+[ERROR] 01/05/2024 00:06:22 Error al crear el bot adrian: ReferenceError: proxies is not defined
+[INFO] 01/05/2024 00:07:07 New Request: POST /api/bots/add from ::ffff:127.0.0.1
+[ERROR] 01/05/2024 00:07:08 Error al crear el bot adrian: ReferenceError: proxies is not defined
+[INFO] 01/05/2024 00:08:36 New Request: POST /api/bots/add from ::ffff:127.0.0.1
+[ERROR] 01/05/2024 00:08:37 Error al crear el bot adrian: TypeError: proxies.map is not a function
+[INFO] 01/05/2024 00:09:35 New Request: POST /api/bots/add from ::ffff:127.0.0.1
+[ERROR] 01/05/2024 00:09:36 Error al crear el bot adrian: TypeError: Cannot read properties of undefined (reading '0')
+[INFO] 01/05/2024 06:43:40 New Request: POST /api/proxies/add from ::ffff:127.0.0.1
+[INFO] 01/05/2024 06:43:43 Se agregaron 1 proxies a la base de datos
+[INFO] 01/05/2024 07:07:35 New Request: POST /api/bots/add from ::ffff:127.0.0.1
+[INFO] 01/05/2024 07:07:51 Se agrego el bot adrian a la base de datos
+[INFO] 01/05/2024 07:23:51 New Request: DELETE /api/bots/delete/66322286fbf2105f213d536a from ::ffff:127.0.0.1
+[INFO] 01/05/2024 07:25:17 New Request: DELETE /api/bots/delete/66322286fbf2105f213d536a from ::ffff:127.0.0.1
+[INFO] 01/05/2024 07:26:03 Se elimino el bot adrian a la base de datos
+[INFO] 01/05/2024 07:36:41 New Request: POST /api/bots/add from ::ffff:127.0.0.1
+[INFO] 01/05/2024 07:36:49 Se agrego el bot solmaira a la base de datos
+[INFO] 01/05/2024 07:47:16 New Request: DELETE /api/bots/delete/663229516ed8f69da21320cc from ::ffff:127.0.0.1
+[INFO] 01/05/2024 07:47:25 Se elimino el bot solmaira a la base de datos
+[INFO] 01/05/2024 07:50:43 New Request: POST /api/bots/add from ::ffff:127.0.0.1
+[INFO] 01/05/2024 07:51:34 Se agrego el bot dunia a la base de datos
+[INFO] 01/05/2024 07:55:26 New Request: DELETE /api/bots/delete/dunia from ::ffff:127.0.0.1
+[ERROR] 01/05/2024 07:55:26 Se esperaba un ID de bot válido
+[INFO] 01/05/2024 07:56:36 New Request: DELETE /api/bots/delete/dunia from ::ffff:127.0.0.1
+[INFO] 01/05/2024 07:56:49 Se elimino el bot dunia a la base de datos
+[INFO] 01/05/2024 08:01:10 New Request: POST /api/bots/add from ::ffff:127.0.0.1
+[INFO] 01/05/2024 08:01:12 Se agrego el bot adrian a la base de datos
+[INFO] 01/05/2024 08:05:24 New Request: DELETE /api/bots/delete/adrian from ::ffff:127.0.0.1
+[INFO] 01/05/2024 08:05:25 Se elimino el bot adrian a la base de datos
+[INFO] 01/05/2024 08:12:00 New Request: POST /api/bots/add from ::ffff:127.0.0.1
+[INFO] 01/05/2024 08:12:01 Se agrego el bot solmairita a la base de datos
+[INFO] 01/05/2024 08:13:13 New Request: DELETE /api/bots/delete/solmairita from ::ffff:127.0.0.1
+[INFO] 01/05/2024 08:13:14 Se elimino el bot solmairita a la base de datos
+[INFO] 01/05/2024 09:24:47 New Request: DELETE /api/bots/delete/solmaira from ::ffff:127.0.0.1
+[ERROR] phone:Error: Bot solmaira no encontrado en la base de datos 01/05/2024 09:24:47 Error al eliminar el bot:
+[INFO] 01/05/2024 09:28:07 New Request: DELETE /api/bots/delete/solmaira from ::ffff:127.0.0.1
+[ERROR] 01/05/2024 09:28:07 Error al eliminar el bot: Error: Bot solmaira no encontrado en la base de datos
+[INFO] 01/05/2024 09:29:11 New Request: DELETE /api/bots/delete/solmaira from ::ffff:127.0.0.1
+[ERROR] 01/05/2024 09:29:11 Error: Bot solmaira no encontrado en la base de datos
+[INFO] 01/05/2024 09:40:26 New Request: DELETE /api/bots/delete/solmaira from ::ffff:127.0.0.1
+[ERROR] 01/05/2024 09:40:26 Error: Bot solmaira no encontrado en la base de datos
+[INFO] 01/05/2024 09:45:15 New Request: DELETE /api/bots/delete/solmaira from ::ffff:127.0.0.1
+[ERROR] 01/05/2024 09:45:15 Error: Bot solmaira no encontrado en la base de datos
+[INFO] 01/05/2024 09:46:27 New Request: DELETE /api/bots/delete/solmaira from ::ffff:127.0.0.1
+[ERROR] 01/05/2024 09:46:27 Ocurrio un error al eliminar el bot: Bot solmaira no encontrado en la base de datos
+[INFO] 01/05/2024 09:47:11 New Request: POST /api/bots/add from ::ffff:127.0.0.1
+[INFO] 01/05/2024 09:47:13 Se agrego el bot adrian a la base de datos
+[INFO] 01/05/2024 09:47:59 New Request: DELETE /api/bots/delete/adrian from ::ffff:127.0.0.1
+[INFO] 01/05/2024 09:48:00 Se elimino el bot adrian a la base de datos
+[INFO] 01/05/2024 10:06:30 New Request: POST /api/bots/add from ::ffff:127.0.0.1
+[INFO] 01/05/2024 10:06:32 Se agrego el bot adrian a la base de datos
+[INFO] 01/05/2024 10:07:23 New Request: GET /api/bots/getResources/66324c678fcccd627d76e8a1 from ::ffff:127.0.0.1
+[INFO] 01/05/2024 11:44:57 New Request: GET /api/phones/get/numbers from ::ffff:127.0.0.1
+[INFO] 01/05/2024 11:46:24 New Request: DELETE /api/bots/delete/adrian from ::ffff:127.0.0.1
+[INFO] 01/05/2024 11:46:25 Se elimino el bot adrian a la base de datos
+[INFO] 01/05/2024 11:47:20 New Request: GET /api/phones/get/numbers from ::ffff:127.0.0.1
+[INFO] 01/05/2024 11:48:27 New Request: GET /api/phones/get/numbers from ::ffff:127.0.0.1
+[INFO] 01/05/2024 11:49:42 New Request: GET /api/phones/get/numbers from ::ffff:127.0.0.1
+[INFO] 01/05/2024 11:50:30 New Request: GET /api/phones/get/numbers from ::ffff:127.0.0.1
+[INFO] 01/05/2024 11:55:53 New Request: POST /api/phones/add from ::ffff:127.0.0.1
+[INFO] 01/05/2024 11:57:07 New Request: POST /api/phones/add from ::ffff:127.0.0.1
+[ERROR] 01/05/2024 11:57:07 Ocurrió un error al intentar agregar los números a la base de datos: Account is not defined
+[INFO] 01/05/2024 11:57:51 New Request: POST /api/phones/add from ::ffff:127.0.0.1
+[ERROR] 01/05/2024 11:57:51 Ocurrió un error al intentar agregar los números a la base de datos: Can't use $size
+[INFO] 01/05/2024 12:04:01 New Request: POST /api/phones/add from ::ffff:127.0.0.1
+[INFO] 01/05/2024 12:04:01 Se agregaron 0 números de teléfono a la base de datos
+[INFO] 01/05/2024 12:09:21 New Request: POST /api/phones/add from ::ffff:127.0.0.1
+[INFO] 01/05/2024 12:12:07 New Request: POST /api/phones/add from ::ffff:127.0.0.1
+[INFO] 01/05/2024 12:23:32 Se agregaron 0 números de teléfono a la base de datos
+[INFO] 01/05/2024 12:42:43 New Request: POST /api/phones/add from ::ffff:127.0.0.1
+[ERROR] 01/05/2024 12:53:34 Ocurrió un error al intentar agregar los números a la base de datos: Transaction with { txnNumber: 1 } has been aborted.
+[INFO] 01/05/2024 12:54:20 New Request: POST /api/phones/add from ::ffff:127.0.0.1
+[INFO] 01/05/2024 12:54:23 Se agregaron 342 números de teléfono a la base de datos
+[INFO] 01/05/2024 13:31:00 New Request: POST /api/phones/add from ::ffff:127.0.0.1
+[INFO] 01/05/2024 13:34:25 New Request: POST /api/phones/add from ::ffff:127.0.0.1
+[INFO] 01/05/2024 13:34:40 Se agregaron 342 números de teléfono a la base de datos
+[INFO] 01/05/2024 13:37:10 New Request: POST /api/phones/add from ::ffff:127.0.0.1
+[INFO] 01/05/2024 13:37:11 Se agregaron 342 números de teléfono a la base de datos
+[INFO] 01/05/2024 13:40:08 New Request: POST /api/phones/add from ::ffff:127.0.0.1
+[ERROR] 01/05/2024 13:40:25 Ocurrió un error al intentar agregar los números a la base de datos: Se necesitan mas cuentas en DB para agregar mas numeros de telefono
+[INFO] 02/05/2024 11:53:33 New Request: POST /api/phones/add from ::ffff:127.0.0.1
+[INFO] 02/05/2024 11:53:34 Se agregaron 342 números de teléfono a la base de datos
+[INFO] 02/05/2024 12:14:14 New Request: POST /api/phones/add from ::ffff:127.0.0.1
+[INFO] 02/05/2024 12:14:15 Se agregaron 342 números de teléfono a la base de datos
+[INFO] 02/05/2024 12:14:55 New Request: POST /api/bots/add from ::ffff:127.0.0.1
+[INFO] 02/05/2024 12:14:57 Se agrego el bot adrian a la base de datos
+[INFO] 02/05/2024 12:16:59 New Request: DELETE /api/bots/delete/adrian from ::ffff:127.0.0.1
+[INFO] 02/05/2024 12:16:59 Se elimino el bot adrian a la base de datos

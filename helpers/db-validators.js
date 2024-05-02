@@ -1,19 +1,20 @@
 const Account = require('../models/account');
-const Phone = require('../models/phone');
 
-const emailExiste = async (correo = '') => {
-  // Verificar si el correo existe
-  const existeEmail = await Account.findOne({correo});
-  return existeEmail ? true : false;
+const emailExiste = async (email = '') => {
+  const existeEmail = await Account.findOne({email});
+  if (existeEmail) {
+    throw new Error(`La cuenta: ${email}, ya se encuentra registrada en DB`);
+  }
 };
 
-const phoneExiste = async (phoneNumber = '') => {
-  // Verificar si el correo existe
-  const existeTelefono = await Phone.findOne({phoneNumber});
-  return existeTelefono ? true : false;
+const botExiste = async (botName = '') => {
+  const existeBot = await Account.findOne({name: botName});
+  if (existeBot) {
+    throw new Error(`El bot ${botName} ya existe en DB`);
+  }
 };
 
 module.exports = {
   emailExiste,
-  phoneExiste,
+  botExiste,
 };

@@ -1,6 +1,6 @@
-const mongoose = require('mongoose');
+const {Schema, model} = require('mongoose');
 
-const phoneNumberSchema = new mongoose.Schema({
+const phoneNumberSchema = new Schema({
   fullPhoneNumber: {
     type: String,
     required: true,
@@ -25,9 +25,19 @@ const phoneNumberSchema = new mongoose.Schema({
   },
   status: {
     type: String,
-    enum: ['assigned', 'available', 'used', 'lost', 'blocked'],
+    enum: ['married', 'available', 'blocked'],
     default: 'available',
+  },
+  assignedBot: {
+    type: Schema.Types.ObjectId,
+    ref: 'Bot',
+  },
+  assignedAccount: {
+    type: Schema.Types.ObjectId,
+    ref: 'Account',
   },
 });
 
-module.exports = mongoose.model('Phone', phoneNumberSchema);
+const Phone = model('Phone', phoneNumberSchema);
+
+module.exports = Phone;

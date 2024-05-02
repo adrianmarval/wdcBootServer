@@ -11,11 +11,15 @@
   "license": "ISC",
   "dependencies": {
     "bcryptjs": "^2.4.3",
+    "axios": "^1.6.8",
+    "tunnel": "^0.0.6",
+    "colors": "^1.4.0",
     "cors": "^2.8.5",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "express-validator": "^6.9.2",
     "google-libphonenumber": "^3.2.34",
-    "mongoose": "^5.11.15"
+    "mongoose": "^5.11.15",
+    "validator": "^13.11.0"
   }
 }
