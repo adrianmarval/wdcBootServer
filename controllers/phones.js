@@ -11,7 +11,7 @@ const addPhones = async (req = request, res = response) => {
 
   try {
     // Obtener cuentas disponibles sin números asignados
-    const availableAccounts = await Account.find({status: 'available', assignedPhones: false}).session(session);
+    const availableAccounts = await Account.find({status: 'available', phoneNumbers: false}).session(session);
 
     if (availableAccounts.length === 0) {
       throw new Error('Se necesitan mas cuentas en DB para agregar mas numeros de telefono');
@@ -32,7 +32,7 @@ const addPhones = async (req = request, res = response) => {
       accountsToUpdate.push(account._id);
     }
 
-    await Account.updateMany({_id: {$in: accountsToUpdate}}, {assignedPhones: true}, {session});
+    await Account.updateMany({_id: {$in: accountsToUpdate}}, {phoneNumbers: true}, {session});
     const insertedPhones = await Phone.insertMany(phonesToInsert, {session});
 
     await session.commitTransaction();
@@ -75,7 +75,7 @@ const addPhones = async (req = request, res = response) => {
   }
 };
 
-const availablePhones = async (req, res) => {
+const availablePhones = async (req = request, res = response) => {
   try {
     const phones = await Phone.find({status: 'available'}).lean();
     return res.json(phones.map((phone) => phone.fullPhoneNumber));
@@ -85,4 +85,48 @@ const availablePhones = async (req, res) => {
   }
 };
 
-module.exports = {addPhones, availablePhones};
+const updatePhones = async (req = request, res = response) => {
+  const {phoneNumbers} = req.body;
+
+  try {
+    const bulkOperations = phoneNumbers.map((phoneNumber) => ({
+      updateOne: {
+        filter: {_id: phoneNumber._id}, // Update each phone by its own _id
+        update: {$set: {status: phoneNumber.status}}, // Set status based on each object's status
+      },
+    }));
+
+    await Phone.bulkWrite(bulkOperations);
+
+    const updatedPhoneNumbers = await Phone.find({_id: {$in: phoneNumbers.map((pn) => pn._id)}});
+
+    logger.log(`Se actualizaron los estados de ${phoneNumbers.length} teléfonos en DB`);
+
+    const response = {
+      success: true,
+      successMessage: `Se actualizaron los estados de ${phoneNumbers.length} teléfonos en DB`,
+      data: {updatedPhoneNumbers},
+      errors: [],
+    };
+
+    return res.json(response);
+  } catch (error) {
+    logger.error(`Ocurrió un error al actualizar los estados de los teléfonos: ${error.message}`);
+    const response = {
+      success: false,
+      successMessage: '',
+      data: {},
+      errors: [
+        {
+          value: phoneNumbers,
+          msg: `Ocurrió un error al actualizar los estados de los teléfonos: ${error.message}`,
+          param: 'phoneNumbers',
+          location: 'body',
+        },
+      ],
+    };
+    return res.json(response);
+  }
+};
+
+module.exports = {addPhones, availablePhones, updatePhones};

@@ -18,7 +18,11 @@ router.post(
   createBot
 );
 
-router.get('/get/resources/:botId', [check('botId', 'Se esperaba un id de mongodb').isMongoId(), validarCampos], getBotResources);
+router.get(
+  '/get/resources/:botName',
+  [check('botName', 'Se esperaba string con el nombre del bot').isString(), validarCampos],
+  getBotResources
+);
 
 router.delete(
   '/delete/:botName',

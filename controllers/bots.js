@@ -12,7 +12,7 @@ const createBot = async (req = request, res = response) => {
   session.startTransaction();
 
   try {
-    const maxAccountsPerBot = parseInt(process.env.ACCOUNTS_PER_BOT) || 100;
+    const maxAccountsPerBot = parseInt(process.env.ACCOUNTS_PER_BOT);
     const accounts = await Account.find({status: 'available', assignedPhones: true})
       .limit(maxAccountsPerBot)
       .session(session)
@@ -143,38 +143,54 @@ const deleteBot = async (req = request, res = response) => {
 };
 
 const getBotResources = async (req = request, res = response) => {
-  const {botId} = req.params;
+  const {botName} = req.params;
 
   try {
-    const bot = await Bot.findById(botId);
+    const bot = await Bot.findOne({name: botName});
     if (!bot) {
       throw new Error('No se encontro el bot');
     }
 
-    const accounts = await Account.find({assignedBot: botId});
-    const phoneNumbers = await Phone.find({assignedBot: botId});
-    const proxy = await Proxy.find({assignedBot: botId});
+    const accounts = await Account.find({assignedBot: bot._id}).lean();
+    const phoneNumbers = await Phone.find({assignedBot: bot._id}).lean();
+    const proxy = await Proxy.find({assignedBot: bot._id}).lean();
+
+    const accountsWithPhones = accounts.map((account) => {
+      const assignedPhones = phoneNumbers.filter((phone) => phone.assignedAccount.toString() === account._id.toString());
+      assignedPhones.sort((a, b) => {
+        const aMarried = a.status === 'married';
+        const bMarried = b.status === 'married';
+        return aMarried === bMarried ? 0 : aMarried ? 1 : -1;
+      });
+
+      return {
+        ...account,
+        assignedPhones,
+      };
+    });
+
+    logger.log(`Se han obtenido los recursos del bot ${bot.name}`);
 
     const response = {
       success: true,
       successMessage: `Se han obtenido los recursos del bot ${bot.name}`,
-      data: {accounts, phoneNumbers, proxy},
+      data: {accounts: accountsWithPhones, proxy},
       errors: [],
     };
 
     return res.json(response);
   } catch (error) {
     logger.error(`Ocurrio un error al obtener recursos para el bot: ${error.message}`);
-    await session.abortTransaction();
+
     const response = {
       success: false,
       successMessage: '',
       data: {},
       errors: [
         {
-          value: botId,
+          value: botName,
           msg: `Ocurrio un error al obtener recursos para el bot: ${error.message}`,
-          param: 'botId',
+          param: 'botName',
           location: 'params',
         },
       ],

@@ -11,6 +11,11 @@ const MAX_PORT = 65535;
 
 const validCountryCodes = ['US', 'CA', 'UK', 'FR', 'DE', 'JP', 'AU' /* Agrega más según sea necesario */];
 
+// Custom validation function for host
+const isHostValid = (value) => {
+  return validator.isIP(value) || validator.isFQDN(value, {require_tld: false});
+};
+
 const router = Router();
 
 router.post(
@@ -20,8 +25,8 @@ router.post(
     check('proxies.*.host')
       .isString()
       .withMessage('El campo host debe ser una cadena de texto')
-      .custom((value) => validator.isFQDN(value, {require_tld: false}))
-      .withMessage('El campo host debe ser un hostname válido'),
+      .custom(isHostValid)
+      .withMessage('El campo host debe ser una IP válida o un hostname válido'),
     check('proxies.*.port')
       .isString()
       .withMessage('El campo port debe ser una cadena de texto')
