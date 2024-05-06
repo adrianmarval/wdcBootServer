@@ -157,11 +157,6 @@ const getBotResources = async (req = request, res = response) => {
 
     const accountsWithPhones = accounts.map((account) => {
       const assignedPhones = phoneNumbers.filter((phone) => phone.assignedAccount.toString() === account._id.toString());
-      assignedPhones.sort((a, b) => {
-        const aMarried = a.status === 'married';
-        const bMarried = b.status === 'married';
-        return aMarried === bMarried ? 0 : aMarried ? 1 : -1;
-      });
 
       return {
         ...account,
